@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_negro"
+    tools:context=".LocalActivity">
+
+    <ImageView
+        android:id="@+id/iv_franja_roja"
+        android:layout_width="wrap_content"
+        android:layout_height="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/franja_roja" />
+
+    <ImageView
+        android:id="@+id/iv_fondo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_franja_roja"
+        app:srcCompat="@drawable/fondo_menu" />
+
+    <GridLayout
+        android:id="@+id/tableroAjedrez"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:background="@android:color/darker_gray"
+        android:columnCount="8"
+        android:padding="4dp"
+        android:rowCount="8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <View
+        android:id="@+id/bloqueoTablero"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:background="#88AAAAAA"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tableroAjedrez"
+        app:layout_constraintEnd_toEndOf="@+id/tableroAjedrez"
+        app:layout_constraintStart_toStartOf="@+id/tableroAjedrez"
+        app:layout_constraintTop_toTopOf="@+id/tableroAjedrez" />
+
+    <TextView
+        android:id="@+id/tv_turno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Turno Blancas"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_contador_negras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="15:00"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_negras"
+        app:layout_constraintStart_toEndOf="@+id/iv_negras"
+        app:layout_constraintTop_toTopOf="@+id/iv_negras" />
+
+    <TextView
+        android:id="@+id/tv_contador_blancas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:text="15:00"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_blancas"
+        app:layout_constraintEnd_toStartOf="@+id/iv_blancas"
+        app:layout_constraintTop_toTopOf="@+id/iv_blancas" />
+
+    <Button
+        android:id="@+id/btn_volver"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="49dp"
+        android:background="@drawable/gradient_boton_rojo"
+        android:fontFamily="@font/newsreader_medium"
+        android:text="Volver"
+        android:textColor="#B71C1C"
+        android:textSize="20sp"
+
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_fen"
+        android:layout_width="62dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/imagebutton_redondeado_blanco"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_fondo"
+        app:layout_constraintStart_toStartOf="@+id/iv_fondo"
+
+        app:srcCompat="@drawable/icono_movimiento2" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_fen"
+        android:layout_width="310dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:visibility="gone"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_fen"
+        app:layout_constraintStart_toEndOf="@+id/btn_fen"
+        app:layout_constraintTop_toTopOf="@+id/btn_fen">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/fondo_cardview2">
+
+
+            <TextView
+                android:id="@+id/tv_fen"
+                android:layout_width="220dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="10dp"
+                android:text="FEN"
+                android:textAlignment="center"
+                android:textColor="#DB4747"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <ImageView
+                android:id="@+id/iv_guardarFEN"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/icono_copiar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_jaque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="41dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_negras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="55dp"
+        app:layout_constraintBottom_toTopOf="@+id/tableroAjedrez"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/negra_rey" />
+
+    <ImageView
+        android:id="@+id/iv_blancas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="55dp"
+        app:layout_constraintBottom_toTopOf="@+id/tableroAjedrez"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/blanca_rey" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

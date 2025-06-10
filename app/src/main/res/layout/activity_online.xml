@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_negro"
+    tools:context=".OnlineActivity">
+
+    <ImageView
+        android:id="@+id/iv_franja_roja_online"
+        android:layout_width="wrap_content"
+        android:layout_height="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/franja_roja" />
+
+    <ImageView
+        android:id="@+id/iv_fondo_online"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_franja_roja_online"
+        app:srcCompat="@drawable/fondo_menu" />
+
+    <GridLayout
+        android:id="@+id/tableroAjedrez_online"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:background="@android:color/darker_gray"
+        android:columnCount="8"
+        android:padding="4dp"
+        android:rowCount="8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.383" />
+
+    <View
+        android:id="@+id/bloqueoTablero_online"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:background="#88AAAAAA"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tableroAjedrez_online"
+        app:layout_constraintEnd_toEndOf="@+id/tableroAjedrez_online"
+        app:layout_constraintStart_toStartOf="@+id/tableroAjedrez_online"
+        app:layout_constraintTop_toTopOf="@+id/tableroAjedrez_online" />
+
+    <ImageView
+        android:id="@+id/franja_jugador1"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="30dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/tableroAjedrez_online"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/franja_jugador" />
+
+    <ImageView
+        android:id="@+id/franja_jugador2"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:rotationY="180"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableroAjedrez_online"
+        app:srcCompat="@drawable/franja_jugador" />
+
+    <TextView
+        android:id="@+id/tv_contador_negras_online"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:text="15:00"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableroAjedrez_online"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_contador_blancas_online"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:shadowColor="#FFFFFF00"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        android:text="15:00"
+        android:textColor="#FFFFFF00"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableroAjedrez_online" />
+
+
+    <Button
+        android:id="@+id/btn_volver_online"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/gradient_boton_rojo"
+        android:fontFamily="@font/newsreader_medium"
+        android:text="Volver"
+        android:textColor="#B71C1C"
+        android:textSize="20sp"
+
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_jugador1_online"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="6dp"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/franja_jugador1"
+        app:layout_constraintStart_toStartOf="@+id/franja_jugador1"
+        app:layout_constraintTop_toTopOf="@+id/franja_jugador1">
+
+        <ImageView
+            android:id="@+id/iv_jugador1_online"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/foto_perfil_vacia" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_jugador2_online"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="6dp"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/franja_jugador2"
+        app:layout_constraintEnd_toEndOf="@+id/franja_jugador2"
+        app:layout_constraintTop_toTopOf="@+id/franja_jugador2"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/iv_jugador2_online"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/foto_perfil_vacia" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_nombre_jugador1_online"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="6dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/franja_jugador1"
+        app:layout_constraintStart_toEndOf="@+id/cv_jugador1_online"
+        app:layout_constraintTop_toTopOf="@+id/franja_jugador1" />
+
+    <TextView
+        android:id="@+id/tv_nombre_jugador2_online"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="6dp"
+        android:shadowColor="#FFFFFF00"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        android:text="TextView"
+        android:textColor="#FFFFFF00"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/franja_jugador2"
+        app:layout_constraintEnd_toStartOf="@+id/cv_jugador2_online"
+        app:layout_constraintTop_toTopOf="@+id/franja_jugador2" />
+
+    <ImageButton
+        android:id="@+id/btn_emojis"
+        android:layout_width="62dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/imagebutton_redondeado"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_fondo_online"
+        app:layout_constraintEnd_toEndOf="@+id/iv_fondo_online"
+
+        app:srcCompat="@drawable/emoji_icon2" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_emoticonos"
+        android:layout_width="310dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="10dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="#262424"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_emojis"
+        app:layout_constraintEnd_toStartOf="@+id/btn_emojis"
+        app:layout_constraintTop_toTopOf="@+id/btn_emojis">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/emoji1"
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="5dp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/emoji_feliz_" />
+
+            <ImageView
+                android:id="@+id/emoji2"
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="6dp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/emoji1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/emoji_preocupado_" />
+
+            <ImageView
+                android:id="@+id/emoji3"
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="6dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/emoji4"
+                app:layout_constraintStart_toEndOf="@+id/emoji2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/emoji_enfadado_" />
+
+            <ImageView
+                android:id="@+id/emoji4"
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/emoji3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/emoji_4_" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/btn_fen_online"
+        android:layout_width="62dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/imagebutton_redondeado_blanco"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_fondo_online"
+        app:layout_constraintStart_toStartOf="@+id/iv_fondo_online"
+
+        app:srcCompat="@drawable/icono_movimiento2" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_fen_online"
+        android:layout_width="310dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:visibility="gone"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_fen_online"
+        app:layout_constraintStart_toEndOf="@+id/btn_fen_online"
+        app:layout_constraintTop_toTopOf="@+id/btn_fen_online">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/fondo_cardview2">
+
+
+            <TextView
+                android:id="@+id/tv_fen_online"
+                android:layout_width="220dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="10dp"
+                android:text="FEN"
+                android:textColor="#DB4747"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <ImageView
+                android:id="@+id/iv_guardarFEN_online"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/icono_copiar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bocadillo_jugador2"
+        android:layout_width="100dp"
+        android:layout_height="90dp"
+        android:layout_marginEnd="56dp"
+        android:background="@drawable/bocadillo"
+        android:rotationY="180"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/franja_jugador2"
+        app:layout_constraintEnd_toEndOf="@+id/franja_jugador2">
+
+        <ImageView
+            android:id="@+id/emoji_jugador2"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.08"
+            tools:srcCompat="@tools:sample/avatars[5]" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bocadillo_jugador1"
+        android:layout_width="100dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="56dp"
+        android:background="@drawable/bocadillo"
+        android:rotation="180"
+        android:rotationY="180"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/franja_jugador1"
+        app:layout_constraintTop_toTopOf="@+id/franja_jugador1">
+
+        <ImageView
+            android:id="@+id/emoji_jugador1"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:rotation="180"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.08"
+            tools:srcCompat="@tools:sample/avatars[6]" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

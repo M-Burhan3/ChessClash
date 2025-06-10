@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "307478226555",
+    "project_id": "ajedrezprueba-29de5",
+    "storage_bucket": "ajedrezprueba-29de5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307478226555:android:f0c2353c68c1fca03764de",
+        "android_client_info": {
+          "package_name": "com.example.ajedrezprueba"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307478226555-ajlvk8rgjfbuh93sirg7720amsquk9di.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ajedrezprueba",
+            "certificate_hash": "0fdbc5b1757c92c071045fdaa4dbc76618954ea4"
+          }
+        },
+        {
+          "client_id": "307478226555-r0dbqcd05bc59qqlbafd24vuctg1mk57.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWweguTNW3-uIid-sohZpdv4mqxHYjYAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307478226555-r0dbqcd05bc59qqlbafd24vuctg1mk57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
